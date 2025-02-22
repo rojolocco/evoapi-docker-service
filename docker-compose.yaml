@@ -1,0 +1,28 @@
+services:
+  api:
+    container_name: evolution_api
+    image: atendai/evolution-api:homolog
+    restart: always
+
+    ports:
+      - 8083:8080
+    volumes:
+      - evolution_instances:/evolution/instances
+    networks:
+      - caddy_network
+    env_file:
+      - .env.dev
+    # expose:
+    #   - 8080
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  evolution_instances:
+
+networks:
+  caddy_network:
+    external: true
