@@ -1,11 +1,10 @@
 services:
   api:
     container_name: evolution
-    image: atendai/evolution-api:homolog
+    image: atendai/evolution-api:v2.2.3
     restart: always
-
-    ports:
-      - 8083:8080
+    # ports:
+    #   - 8083:8080
     volumes:
       - evolution_instances:/evolution/instances
     networks:
