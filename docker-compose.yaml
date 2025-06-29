@@ -1,18 +1,14 @@
 services:
-  api:
-    container_name: evolution
-    image: atendai/evolution-api:v2.2.3
+  evoapi:
+    container_name: evoapi
+    image: atendai/evolution-api:latest
     restart: always
-    # ports:
-    #   - 8083:8080
     volumes:
       - evolution_instances:/evolution/instances
     networks:
       - caddy_network
     env_file:
       - .env
-    # expose:
-    #   - 8080
     deploy:
       resources:
         limits:
@@ -21,6 +17,7 @@ services:
 
 volumes:
   evolution_instances:
+    driver: local
 
 networks:
   caddy_network:
