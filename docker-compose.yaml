@@ -6,7 +6,7 @@ services:
     volumes:
       - evolution_instances:/evolution/instances
     networks:
-      - caddy_network
+      - traefik_network
     env_file:
       - .env
     deploy:
@@ -20,5 +20,5 @@ volumes:
     driver: local
 
 networks:
-  caddy_network:
+  traefik_network:
     external: true
