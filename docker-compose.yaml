@@ -1,7 +1,7 @@
 services:
   evoapi:
     container_name: evoapi
-    image: evoapicloud/evolution-api:homolog
+    image: evoapicloud/evolution-api:latest
     restart: always
     volumes:
       - evolution_instances:/evolution/instances
@@ -9,11 +9,6 @@ services:
       - traefik_network
     env_file:
       - .env
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 512M
 
 volumes:
   evolution_instances:
