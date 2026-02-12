@@ -6,7 +6,7 @@ services:
     volumes:
       - evolution_instances:/evolution/instances
     networks:
-      - traefik_network
+      - internal_network
     env_file:
       - .env
 
@@ -15,5 +15,5 @@ volumes:
     driver: local
 
 networks:
-  traefik_network:
+  internal_network:
     external: true
