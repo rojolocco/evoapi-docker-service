@@ -1,7 +1,7 @@
 services:
   evoapi:
     container_name: evoapi
-    image: evoapicloud/evolution-api:homolog
+    image: evoapicloud/evolution-api:v2.3.7
     restart: always
     volumes:
       - evolution_instances:/evolution/instances
